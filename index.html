@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>现房销售投资测算 · 828新政</title>
+    <script>
+      // 错误显示层:任何运行时报错直接显示在页面上,避免黑屏
+      ;(function () {
+        function showError(msg) {
+          var el = document.getElementById('__boot_error__')
+          if (!el) {
+            el = document.createElement('pre')
+            el.id = '__boot_error__'
+            el.style.cssText =
+              'position:fixed;top:12px;left:12px;right:12px;z-index:99999;background:#3a1113;color:#ffb3b8;padding:16px;border-radius:10px;font:13px/1.6 monospace;white-space:pre-wrap;'
+            document.body.appendChild(el)
+          }
+          el.textContent = '页面运行出错(请截图反馈):\n' + msg
+        }
+        window.addEventListener('error', function (e) {
+          showError((e.message || 'Script error') + (e.filename ? '\n' + e.filename + ':' + e.lineno : ''))
+        })
+        window.addEventListener('unhandledrejection', function (e) {
+          showError('Promise rejection: ' + (e.reason && (e.reason.stack || e.reason.message || String(e.reason))))
+        })
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
